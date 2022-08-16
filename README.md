@@ -42,3 +42,35 @@ All case studies are listed [here](https://8weeksqlchallenge.com/). For further 
 👉  [Case study questions & Available Data](https://8weeksqlchallenge.com/case-study-4/)
 
 :point_right: [SQL Code] :construction:
+
+
+## Case Study #5 Data - Mart
+<img src="https://8weeksqlchallenge.com/images/case-study-designs/5.png" alt="Image" width="500" height="520">
+
+👉  [Case study questions & Available Data](https://8weeksqlchallenge.com/case-study-5/)
+
+:point_right: [SQL Code] :construction:
+
+
+## Case Study #6 Clique Bait
+<img src="https://8weeksqlchallenge.com/images/case-study-designs/6.png" alt="Image" width="500" height="520">
+
+👉  [Case study questions & Available Data](https://8weeksqlchallenge.com/case-study-6/)
+
+:point_right: [SQL Code] :construction:
+
+
+## Case Study #7 Balanced Tree Clothing Co.
+<img src="https://8weeksqlchallenge.com/images/case-study-designs/7.png" alt="Image" width="500" height="520">
+
+👉  [Case study questions & Available Data](https://8weeksqlchallenge.com/case-study-7/)
+
+:point_right: [SQL Code] :construction:
+
+
+## Case Study #8 Fresh Segments
+<img src="https://8weeksqlchallenge.com/images/case-study-designs/8.png" alt="Image" width="500" height="520">
+
+👉  [Case study questions & Available Data](https://8weeksqlchallenge.com/case-study-8/)
+
+:point_right: [SQL Code] :construction:

@@ -34,3 +34,11 @@ All case studies are listed [here](https://8weeksqlchallenge.com/). For further 
 👉 [Case study questions & Available Data](https://8weeksqlchallenge.com/case-study-3/)
 
 :point_right: [SQL Code] :construction:
+
+
+## Case Study #4 - Data Bank
+<img src="https://8weeksqlchallenge.com/images/case-study-designs/4.png" alt="Image" width="500" height="520">
+
+👉  [Case study questions & Available Data](https://8weeksqlchallenge.com/case-study-4/)
+
+:point_right: [SQL Code] :construction:

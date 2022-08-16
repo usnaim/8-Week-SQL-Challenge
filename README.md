@@ -1,6 +1,6 @@
 # 8-Week-SQL-Challenge
-All casesStudies are listed [here](https://8weeksqlchallenge.com/). For further Information please visit [Virtual Data Internship](https://www.datawithdanny.com/)!
-## All Case studies
+All case studies are listed [here](https://8weeksqlchallenge.com/). For further Information please visit [Virtual Data Internship](https://www.datawithdanny.com/)!
+## Case Studies
 -  [Case Study #1: Danny's Diner](#case-study-1-dannys-diner)
 -  [Case Study #2: Pizza Runner](#case-study-2-pizza-runner)
 

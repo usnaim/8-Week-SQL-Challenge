@@ -33,7 +33,8 @@ All case studies are listed [here](https://8weeksqlchallenge.com/). For further 
 
 👉 [Case study questions & Available Data](https://8weeksqlchallenge.com/case-study-3/)
 
-:point_right: [SQL Code] :construction:
+:point_right: [SQL Code](https://github.com/usnaim/8-Week-SQL-Challenge/blob/main/Case%20Study%20%233%20-%20Foodie-Fi/SQL%20code/Readme.md)
+:construction:
 
 
 ## Case Study #4 - Data Bank

@@ -44,3 +44,4 @@ where customer_id  in (1,2,11,13,15,16,18,19);
 SELECT count (DISTINCT customer_id)
 FROM foodie_fi.subscriptions;
 ````
+**2-What is the monthly distribution of trial plan start_date values for our dataset - use the start of the month as the group by value?**

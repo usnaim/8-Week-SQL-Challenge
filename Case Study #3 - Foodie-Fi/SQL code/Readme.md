@@ -35,8 +35,7 @@ where customer_id  in (1,2,11,13,15,16,18,19);
 |         19  |         2 |     19.90 | 2020-06-29  |
 |         19  |         3 |    199.00 | 2020-08-29  | 
 
->From the table above, we can see how the Customers upgraded their susscriptions after the free trial differently.  Customesr with id 1,13 and 16 choose the Basic plan,  Customer with id 2 upgraded to the annual subscription. While customer with id 4 cancel the service after the free trial, customer with id 15 upgraded his subscription first to a pro monthly plan and then cancelled his susbscription. Customers with id 16, 19 and  upgraded their susbscription further to the annual plan,
->meanwhile customer with id 18 and 13 upgraded to the pro monthly plan.
+>From the table above, we can see how the Customers upgraded their susscriptions after the free trial differently.  Customesr with id 1,13 and 16 choose the Basic plan,  Customer with id 2 upgraded to the annual subscription. While customer with id 4 cancel the service after the free trial, customer with id 15 upgraded his subscription first to a pro monthly plan and then cancelled his susbscription. Meanwhile Customers upgraded their susbscription further to the annual plan, C. with id 16 passing by tha basic plan and C.  with id 19 passing by the monthly plan, customers with id 18 and 13 upgraded to the pro monthly plan.
 
 **B. Data Analysis Questions**
 

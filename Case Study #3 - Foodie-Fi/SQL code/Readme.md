@@ -39,4 +39,8 @@ where customer_id  in (1,2,11,13,15,16,18,19);
 >meanwhile customer with id 18 and 13 upgraded to the pro monthly plan.
 
 **B. Data Analysis Questions**
-1-How many customers has Foodie-Fi ever had?
+
+**1-How many customers has Foodie-Fi ever had?**
+````
+
+````

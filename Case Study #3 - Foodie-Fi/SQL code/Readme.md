@@ -45,3 +45,13 @@ SELECT count (DISTINCT customer_id)
 FROM foodie_fi.subscriptions;
 ````
 **2-What is the monthly distribution of trial plan start_date values for our dataset - use the start of the month as the group by value?**
+````
+
+SELECT
+  DATE_TRUNC('month', start_date)::DATE AS start_of_month,
+  COUNT(*) AS trial_customers
+FROM foodie_fi.subscriptions
+WHERE plan_id = 0
+GROUP BY start_of_month
+ORDER BY start_of_month;
+````

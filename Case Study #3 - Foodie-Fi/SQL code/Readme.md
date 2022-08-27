@@ -55,3 +55,14 @@ WHERE plan_id = 0
 GROUP BY start_of_month
 ORDER BY start_of_month;
 ````
+**3-What plan start_date values occur after the year 2020 for our dataset? Show the breakdown by count of events for each plan_name?**
+````
+SELECT
+   plan_name,
+ t1.plan_id, count(*)
+FROM foodie_fi.plans as t1
+JOIN foodie_fi.subscriptions as t2
+ON t1.plan_id=t2.plan_id
+WHERE start_date >'2020-12-31'
+GROUP BY t1.plan_id,plan_name;
+````

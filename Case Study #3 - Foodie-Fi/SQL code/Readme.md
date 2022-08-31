@@ -66,3 +66,12 @@ ON t1.plan_id=t2.plan_id
 WHERE start_date >'2020-12-31'
 GROUP BY t1.plan_id,plan_name;
 ````
+**4-What is the customer count and percentage of customers who have churned rounded to 1 decimal place?**
+````
+SELECT sum( case when plan_id=4 then 1 end) as churned_customer_count,
+       Round(
+     100*  sum( case when plan_id=4 then 1 end) /
+       count( distinct customer_id)::Numeric,1 
+           ) as percentage 
+FROM foodie_fi.subscriptions;
+````

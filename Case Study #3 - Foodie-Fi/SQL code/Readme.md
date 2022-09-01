@@ -151,3 +151,14 @@ JOIN foodie_fi.plans
 ON  actual_customers.plan_id = foodie_fi.plans.plan_id
 ORDER BY 1;
 ````
+**8-How many customers have upgraded to an annual plan in 2020?**
+````
+With year_part as(
+SELECT customer_id, plan_id,date_part('year',start_date) as year_2020
+FROM foodie_fi.subscriptions
+WHERE plan_id=3
+)
+SELECT count(distinct customer_id)
+FROM year_part 
+WHERE year_2020= 2020;
+````

@@ -130,5 +130,6 @@ SELECT
     100 * SUM(CASE WHEN plan_id = 3 THEN 1 ELSE 0 END) /
    SUM(count(*)) over())
    AS pro_plan_percentage
-FROM ranked_plans;
+FROM ranked_plans
+WHERE plan_rank = 2;
 ````

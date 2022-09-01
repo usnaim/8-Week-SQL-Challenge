@@ -96,7 +96,7 @@ SELECT
 FROM ranked_plans
 WHERE plan_rank = 2;
 ````
-**-6-What is the number and percentage of customer plans after their initial free trial?**
+**6-What is the number and percentage of customer plans after their initial free trial?**
 ````
 WITH ranked_plans AS (
  SELECT
@@ -132,4 +132,22 @@ SELECT
    AS pro_plan_percentage
 FROM ranked_plans
 WHERE plan_rank = 2;
+````
+**7-What is the customer count and percentage breakdown of all 5 plan_name values at 2020-12-31? **
+````
+With prior_date as( 
+SELECT plan_id,count(distinct customer_id) as customer_count
+FROM foodie_fi.subscriptions 
+WHERE start_date<='2020-12-31'
+GROUP BY plan_id
+),
+actual_customers as(
+SELECT plan_id, customer_count
+FROM prior_date
+)
+SELECT plans.plan_id,plans.plan_name, customer_count, ROUND(100 * customer_count/ sum(customer_count) over(),1) as percentage
+FROM  actual_customers
+JOIN foodie_fi.plans
+ON  actual_customers.plan_id = foodie_fi.plans.plan_id
+ORDER BY 1;
 ````

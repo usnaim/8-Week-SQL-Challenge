@@ -75,3 +75,24 @@ SELECT sum( case when plan_id=4 then 1 end) as churned_customer_count,
            ) as percentage 
 FROM foodie_fi.subscriptions;
 ````
+**5-How many customers have churned straight after their initial free trial - what percentage is this rounded to 1 decimal place?**
+````
+WITH ranked_plans AS (
+ SELECT
+    customer_id,
+    plan_id,
+    ROW_NUMBER() OVER (
+      PARTITION BY customer_id
+      ORDER BY start_date 
+    ) AS plan_rank
+  FROM foodie_fi.subscriptions
+)
+SELECT
+  SUM(CASE WHEN plan_id = 4 THEN 1 ELSE 0 END) AS churn_customers,
+  ROUND(
+    100 * SUM(CASE WHEN plan_id = 4 THEN 1 ELSE 0 END) /
+    COUNT(*)
+  ) AS percentage
+FROM ranked_plans
+WHERE plan_rank = 2;
+````

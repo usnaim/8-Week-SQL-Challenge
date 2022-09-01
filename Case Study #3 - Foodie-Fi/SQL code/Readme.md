@@ -112,24 +112,23 @@ WITH ranked_plans AS (
 SELECT
   SUM(CASE WHEN plan_id = 4 THEN 1 ELSE 0 END) AS churn_customers,
   ROUND(
-    100 * SUM(CASE WHEN plan_id = 4 THEN 1 ELSE 0 END) /
-    COUNT(*)
-  ) AS churn_customers_percentage,
+    100 * SUM(CASE WHEN plan_id = 4 THEN 1 ELSE 0 END)/SUM(count(*)) over())
+    AS churn_customers_percentage,
+    
   SUM(CASE WHEN plan_id = 1 THEN 1 ELSE 0 END) AS basic_plan,
   ROUND(
-    100 * SUM(CASE WHEN plan_id = 1 THEN 1 ELSE 0 END) /
-    COUNT(*)
-  ) AS basic_plan_percentage,
+    100 * SUM(CASE WHEN plan_id = 1 THEN 1 ELSE 0 END) /SUM(count(*)) over())
+   AS basic_plan_percentage,
+  
   SUM(CASE WHEN plan_id = 4 THEN 2 ELSE 0 END) AS monthly_plan,
   ROUND(
     100 * SUM(CASE WHEN plan_id = 2 THEN 1 ELSE 0 END) /
-    COUNT(*)
-  ) AS monthly_plan_percentage,
+    SUM(count(*)) over()) AS monthly_plan_percentage,
+    
   SUM(CASE WHEN plan_id = 3 THEN 1 ELSE 0 END) AS pro_annual,
   ROUND(
     100 * SUM(CASE WHEN plan_id = 3 THEN 1 ELSE 0 END) /
-    COUNT(*)
-  ) AS pro_plan_percentage
-FROM ranked_plans
-WHERE plan_rank = 2;
+   SUM(count(*)) over())
+   AS pro_plan_percentage
+FROM ranked_plans;
 ````

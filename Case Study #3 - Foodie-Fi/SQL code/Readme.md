@@ -162,3 +162,21 @@ SELECT count(distinct customer_id)
 FROM year_part 
 WHERE year_2020= 2020;
 ````
+**--9-How many days on average does it take for a customer to an annual plan from the day they join Foodie-Fi?**
+````
+With basic_plan as(
+SELECT customer_id, start_date as trial_date
+FROM foodie_fi.subscriptions
+WHERE plan_id = 0
+),
+pro_annual as (
+SELECT customer_id, start_date as annual_date
+FROM foodie_fi.subscriptions
+WHERE plan_id = 3
+)
+
+SELECT ROUND(avg(date_part('day',(annual_date::timestamp - trial_date::timestamp)))) as avg_days
+FROM basic_plan
+JOIN pro_annual
+ON   basic_plan.customer_id=pro_annual.customer_id;
+````

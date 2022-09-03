@@ -180,3 +180,36 @@ FROM basic_plan
 JOIN pro_annual
 ON   basic_plan.customer_id=pro_annual.customer_id;
 ````
+**--10-Can you further breakdown this average value into 30 day periods (i.e. 0-30 days, 31-60 days etc)?**
+````
+With basic_plan as(
+SELECT customer_id, start_date as trial_date
+FROM foodie_fi.subscriptions
+WHERE plan_id = 0
+),
+pro_annual as (
+SELECT customer_id, start_date as annual_date
+FROM foodie_fi.subscriptions
+WHERE plan_id = 3
+)
+
+SELECT           ( case when (date_part('day',(annual_date::timestamp - trial_date::timestamp)))<= 30 then  '0-30 days'
+                        when (date_part('day',(annual_date::timestamp - trial_date::timestamp))) <= 60 then '31-60 days'
+                        when (date_part('day',(annual_date::timestamp - trial_date::timestamp))) <= 90 then  '61-90 days'
+                        when (date_part('day',(annual_date::timestamp - trial_date::timestamp))) <= 120 then '91-120 days'
+                        when (date_part('day',(annual_date::timestamp - trial_date::timestamp))) <= 150 then '121-150 days'
+                        when (date_part('day',(annual_date::timestamp - trial_date::timestamp))) <= 180 then '151-180 days'
+                        when (date_part('day',(annual_date::timestamp - trial_date::timestamp))) <= 210 then '181-210 days'
+                        when (date_part('day',(annual_date::timestamp - trial_date::timestamp))) <= 240 then '211-240 days'
+                        when (date_part('day',(annual_date::timestamp - trial_date::timestamp))) <= 270 then '241-270 days'
+                        when (date_part('day',(annual_date::timestamp - trial_date::timestamp))) <= 300 then '271-300 days'
+                        when (date_part('day',(annual_date::timestamp - trial_date::timestamp))) <= 330 then '301-330 days'
+                        when (date_part('day',(annual_date::timestamp - trial_date::timestamp))) <= 360 then '331-360 days'
+                        when (date_part('day',(annual_date::timestamp - trial_date::timestamp))) <= 390 then '361-390 days' end)as avg_days,
+ count(*) as customers
+FROM basic_plan
+JOIN pro_annual
+ON   basic_plan.customer_id=pro_annual.customer_id 
+GROUP BY avg_days
+ORDER BY avg_days DESC;
+````

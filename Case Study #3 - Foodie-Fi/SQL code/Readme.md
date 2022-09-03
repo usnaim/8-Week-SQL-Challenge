@@ -1,5 +1,6 @@
-**Case Study Questions**
-**A. Customer Journey**
+## Case Study Questions
+
+### A. Customer Journey
 >Based off the 8 sample customers provided in the sample from the subscriptions table, write a brief description about each customer’s onboarding journey.
 
 >Try to keep it as short as possible - you may also want to run some sort of join to make your explanations a bit easier!
@@ -37,7 +38,7 @@ where customer_id  in (1,2,11,13,15,16,18,19);
 
 >From the table above, we can see how the Customers upgraded their susscriptions after the free trial differently.  Customesr with id 1,13 and 16 choose the Basic plan,  Customer with id 2 upgraded to the annual subscription. While customer with id 4 cancel the service after the free trial, customer with id 15 upgraded his subscription first to a pro monthly plan and then cancelled his susbscription. Meanwhile Customers upgraded their susbscription further to the annual plan, C. with id 16 passing by tha basic plan and C.  with id 19 passing by the monthly plan, customers with id 18 and 13 upgraded to the pro monthly plan.
 
-**B. Data Analysis Questions**
+### B. Data Analysis Questions
 
 **1-How many customers has Foodie-Fi ever had?**
 ````
@@ -231,3 +232,4 @@ FROM abc
 JOIN cba
 ON abc.customer_id=cba.customer_id;
 ````
+### C. Challenge Payment Question

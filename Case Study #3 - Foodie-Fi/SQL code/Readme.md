@@ -194,7 +194,8 @@ FROM foodie_fi.subscriptions
 WHERE plan_id = 3
 )
 
-SELECT           ( case when (date_part('day',(annual_date::timestamp - trial_date::timestamp)))<= 30 then  '0-30 days'
+SELECT           
+( case when (date_part('day',(annual_date::timestamp - trial_date::timestamp)))<= 30 then  '0-30 days'
                         when (date_part('day',(annual_date::timestamp - trial_date::timestamp))) <= 60 then '31-60 days'
                         when (date_part('day',(annual_date::timestamp - trial_date::timestamp))) <= 90 then  '61-90 days'
                         when (date_part('day',(annual_date::timestamp - trial_date::timestamp))) <= 120 then '91-120 days'
@@ -206,7 +207,8 @@ SELECT           ( case when (date_part('day',(annual_date::timestamp - trial_da
                         when (date_part('day',(annual_date::timestamp - trial_date::timestamp))) <= 300 then '271-300 days'
                         when (date_part('day',(annual_date::timestamp - trial_date::timestamp))) <= 330 then '301-330 days'
                         when (date_part('day',(annual_date::timestamp - trial_date::timestamp))) <= 360 then '331-360 days'
-                        when (date_part('day',(annual_date::timestamp - trial_date::timestamp))) <= 390 then '361-390 days' end)as avg_days,
+                        when (date_part('day',(annual_date::timestamp - trial_date::timestamp))) <= 390 then '361-390 days' end)
+                        as avg_days,
  count(*) as customers
 FROM basic_plan
 JOIN pro_annual

@@ -213,3 +213,21 @@ ON   basic_plan.customer_id=pro_annual.customer_id
 GROUP BY avg_days
 ORDER BY avg_days DESC;
 ````
+**--11-How many customers downgraded from a pro monthly to a basic monthly plan in 2020?**
+````
+WITH abc as(
+SELECT customer_id
+FROM foodie_fi.subscriptions
+WHERE start_date< '2020-12-31' and plan_id=2
+GROUP BY 1
+),
+cba as (
+SELECT customer_id
+FROM foodie_fi.subscriptions
+WHERE start_date between '2020-01-01' and '2020-12-31' and plan_id=1
+)
+SELECT count(abc.customer_id)
+FROM abc 
+JOIN cba
+ON abc.customer_id=cba.customer_id;
+````
